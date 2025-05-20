@@ -1,0 +1,36 @@
+import System;
+
+public abstract class AbstractPrinter {
+    public abstract void Print(int x) const;
+}
+
+public class ConsolePrinter : AbstractPrinter {
+    public void Print(int x) const {
+        Console.WriteLine(x);
+    }
+}
+
+public struct Pos2d {
+    int X, Y;
+
+    constructor(int x, int y) {
+        X = x;
+        Y = y;
+    }
+    
+    public override const string ToString() const {
+        return string.Format("({0}, {1})", X, Y);
+    }
+}
+
+public interface ICalc {
+    int Sum(int a, int b) const;
+}
+
+public interface IFoo {}
+
+public final class FooCalc : ICalc, IFoo {
+    public int Sum(int a, int b) const {
+        return a + b;
+    }
+}

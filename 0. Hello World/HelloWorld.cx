@@ -1,0 +1,5 @@
+import System;
+
+public void Main() {
+    Console.WriteLine("Hello world!");
+}
