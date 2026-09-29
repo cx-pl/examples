@@ -1,0 +1,17 @@
+public int SumSmallSquares() {
+    int[] squares = new int[5];
+
+    for (int index = 0; index < 5; index++) {
+        squares[index] = index * index;
+    }
+
+    int total = 0;
+    foreach (int square in squares) {
+        if (square > 9) {
+            break;
+        }
+        total += square;
+    }
+
+    return total;
+}

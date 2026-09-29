@@ -1,0 +1,13 @@
+// `extern` accessors declare properties implemented by the hosting runtime.
+public class Counter {
+    public int Value { extern get; extern set; }
+
+    public int Item {
+        extern const get(uint index);
+        extern set(uint index);
+    }
+}
+
+public static class ApplicationSettings {
+    public static string Name { extern get; }
+}

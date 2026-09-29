@@ -1,0 +1,11 @@
+public class ExpressionExamples {
+    public static int Calculate(int left, int right) {
+        int arithmetic = left + right * 2;
+        int flags = left << 1 | right;
+        return arithmetic > flags ? arithmetic : flags;
+    }
+
+    public static string DisplayName(string preferredName, string fallbackName) {
+        return preferredName ?? fallbackName;
+    }
+}

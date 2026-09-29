@@ -1,0 +1,20 @@
+public enum TrafficLight {
+    Red = 1,
+    Yellow = 2,
+    Green = 3,
+}
+
+public class Signal {
+    public static string Describe(TrafficLight light) {
+        switch (light) {
+            case TrafficLight.Red:
+                return "stop";
+            case TrafficLight.Yellow:
+                return "slow down";
+            case TrafficLight.Green:
+                return "go";
+            default:
+                return "unknown";
+        }
+    }
+}
