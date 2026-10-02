@@ -1,0 +1,70 @@
+// Generic functions can infer their type argument from the call.
+public T Identity<T>(T value) {
+    return value;
+}
+
+public T Select<T>(bool chooseFirst, T first, T second) {
+    if (chooseFirst) return first; else return second;
+}
+
+// Type arguments can also be written explicitly.
+public int KeepInt(int value) {
+    return Identity<int>(value);
+}
+
+public long ChooseLong(bool chooseFirst, long first, long second) {
+    return Select(chooseFirst, first, second);
+}
+
+// Generic parameters can appear inside arrays and constructed types.
+public T[] SelectArray<T>(bool chooseFirst, T[] first, T[] second) {
+    if (chooseFirst) return first; else return second;
+}
+
+public int[] ChooseIntArray(bool chooseFirst, int[] first, int[] second) {
+    return SelectArray(chooseFirst, first, second);
+}
+
+public class Box<T> {}
+
+public Box<T> IdentityBox<T>(Box<T> value) {
+    return value;
+}
+
+public Box<int> KeepIntBox(Box<int> value) {
+    return IdentityBox(value);
+}
+
+// A generic class can use more than one type parameter and specialize its
+// fields, constructor, and methods for a closed type such as Pair<int, long>.
+public class Pair<T, U> {
+    public T first;
+    public U second;
+
+    public constructor(T firstValue, U secondValue) {
+        first = firstValue;
+        second = secondValue;
+    }
+
+    public T First() {
+        return first;
+    }
+
+    public void SetFirst(T next) {
+        first = next;
+    }
+
+    public V Echo<V>(V value) {
+        return value;
+    }
+}
+
+public int UsePair() {
+    Pair<int, long> pair = new Pair<int, long>(5, 13L);
+    pair.SetFirst(8);
+    return pair.Echo<int>(pair.First());
+}
+
+public long ReadPairSecond(Pair<int, long> pair) {
+    return pair.Echo<long>(pair.second);
+}

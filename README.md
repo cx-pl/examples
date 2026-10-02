@@ -11,3 +11,5 @@ to be read and compiled individually rather than as one combined project.
 - `4. Properties` — regular, static, and indexed property declarations.
 - `5. Expressions` — arithmetic, bitwise, conditional, and null-coalescing
   expressions.
+- `6. Generics` — inferred and explicit generic calls, generic arrays and
+  nested types, and a two-parameter generic class with a generic method.
