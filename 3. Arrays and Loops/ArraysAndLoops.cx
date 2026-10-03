@@ -10,7 +10,7 @@ public int SumSmallSquares() {
         if (square > 9) {
             break;
         }
-        total += square;
+         otal += square;
     }
 
     return total;

@@ -1,8 +1,8 @@
 {
-    "files.associations": {
-        "cxdefs.h": "c",
-        "cx.h": "c",
-        "helloworld.h": "c",
-        "cxcore.h": "c"
-    }
+  "files.associations": {
+    "cxdefs.h": "c",
+    "cx.h": "c",
+    "helloworld.h": "c",
+    "cxcore.h": "c"
+  }
 }

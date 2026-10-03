@@ -23,14 +23,11 @@ CX_TYPE_DEF(CX_ID_2(Expressions, ExpressionExamples)) {
 // Function and property declarations
 //
 
-extern CX_EXPORT cx_int CX_ID_3(Expressions, ExpressionExamples, Calculate)(
-    cx_int left,
-    cx_int right
-);
-extern CX_EXPORT struct CX_ID_3(cxcore, System, String)* CX_ID_3(Expressions, ExpressionExamples, DisplayName)(
-    struct CX_ID_3(cxcore, System, String)* preferredName,
-    struct CX_ID_3(cxcore, System, String)* fallbackName
-);
-
+extern CX_EXPORT cx_int CX_ID_3(Expressions, ExpressionExamples, Calculate)(cx_int left,
+                                                                            cx_int right);
+extern CX_EXPORT struct CX_ID_3(cxcore, System, String) *
+    CX_ID_3(Expressions, ExpressionExamples,
+            DisplayName)(struct CX_ID_3(cxcore, System, String) * preferredName,
+                         struct CX_ID_3(cxcore, System, String) * fallbackName);
 
 #endif // _EXPRESSIONS_H_

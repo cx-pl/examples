@@ -13,12 +13,9 @@ CX_STRING_DEF(__namespace, "");
 // Static fields
 //
 
-
 //
 // Interface dispatch thunks
 //
-
-
 
 //
 // TypeInfos
@@ -26,7 +23,9 @@ CX_STRING_DEF(__namespace, "");
 
 CX_BEGIN_VTABLE_DEF(CX_ID_2(Expressions, ExpressionExamples))
 CX_END_VTABLE_DEF;
-CX_CLASS_TYPEINFO_DEF(CX_ID_2(Expressions, ExpressionExamples), CX_ID_2(__name, ExpressionExamples), __namespace, CX_ID_4(cxcore, System, Object, __typeinfo), 0x102315C822DB064F, CX_REFLECTION_FLAG_VISIBILITY_PUBLIC | CX_REFLECTION_FLAG_TYPE_CLASS);
+CX_CLASS_TYPEINFO_DEF(CX_ID_2(Expressions, ExpressionExamples), CX_ID_2(__name, ExpressionExamples),
+                      __namespace, CX_ID_4(cxcore, System, Object, __typeinfo), 0x102315C822DB064F,
+                      CX_REFLECTION_FLAG_VISIBILITY_PUBLIC | CX_REFLECTION_FLAG_TYPE_CLASS);
 
 //
 // Functions
@@ -38,7 +37,9 @@ cx_int CX_ID_3(Expressions, ExpressionExamples, Calculate)(cx_int left, cx_int r
     return ((arithmetic > flags) ? arithmetic : flags);
 }
 
-struct CX_ID_3(cxcore, System, String)* CX_ID_3(Expressions, ExpressionExamples, DisplayName)(struct CX_ID_3(cxcore, System, String)* preferredName, struct CX_ID_3(cxcore, System, String)* fallbackName) {
+struct CX_ID_3(cxcore, System, String) *
+    CX_ID_3(Expressions, ExpressionExamples,
+            DisplayName)(struct CX_ID_3(cxcore, System, String) * preferredName,
+                         struct CX_ID_3(cxcore, System, String) * fallbackName) {
     return ((preferredName) != CX_NULL ? (preferredName) : fallbackName);
 }
-

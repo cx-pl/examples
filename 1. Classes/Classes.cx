@@ -17,7 +17,7 @@ public struct Pos2d {
         X = x;
         Y = y;
     }
-    
+
     public override const string ToString() const {
         return string.Format("({0}, {1})", X, Y);
     }

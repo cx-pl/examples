@@ -9,17 +9,14 @@
 // Forward type declarations
 //
 
-
 //
 // Type declarations
 //
-
 
 //
 // Function and property declarations
 //
 
 extern CX_EXPORT cx_int CX_ID_2(ArraysAndLoops, SumSmallSquares)();
-
 
 #endif // _ARRAYSANDLOOPS_H_

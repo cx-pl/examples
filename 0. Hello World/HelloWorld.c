@@ -12,17 +12,13 @@ CX_STRING_DEF(CX_ID_2(HelloWorld, __string_9E77BDB7B7B67BEE), "Hello world!");
 // Static fields
 //
 
-
 //
 // Interface dispatch thunks
 //
 
-
-
 //
 // TypeInfos
 //
-
 
 //
 // Functions
@@ -31,4 +27,3 @@ CX_STRING_DEF(CX_ID_2(HelloWorld, __string_9E77BDB7B7B67BEE), "Hello world!");
 void CX_ID_2(HelloWorld, Main)() {
     CX_ID_4(cxcore, System, Console, WriteLine)(&CX_ID_2(HelloWorld, __string_9E77BDB7B7B67BEE));
 }
-

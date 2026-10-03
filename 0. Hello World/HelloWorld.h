@@ -9,17 +9,14 @@
 // Forward type declarations
 //
 
-
 //
 // Type declarations
 //
-
 
 //
 // Function and property declarations
 //
 
 extern CX_EXPORT void CX_ID_2(HelloWorld, Main)();
-
 
 #endif // _HELLOWORLD_H_

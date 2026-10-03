@@ -28,9 +28,7 @@ CX_TYPE_DEF(CX_ID_2(EnumsAndSwitch, Signal)) {
 // Function and property declarations
 //
 
-extern CX_EXPORT struct CX_ID_3(cxcore, System, String)* CX_ID_3(EnumsAndSwitch, Signal, Describe)(
-    CX_ID_2(EnumsAndSwitch, TrafficLight) light
-);
-
+extern CX_EXPORT struct CX_ID_3(cxcore, System, String) *
+    CX_ID_3(EnumsAndSwitch, Signal, Describe)(CX_ID_2(EnumsAndSwitch, TrafficLight) light);
 
 #endif // _ENUMSANDSWITCH_H_

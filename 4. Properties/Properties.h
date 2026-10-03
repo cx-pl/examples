@@ -25,25 +25,19 @@ CX_TYPE_DEF(CX_ID_2(Properties, Counter)) {
 // Function and property declarations
 //
 
-extern CX_EXPORT struct CX_ID_3(cxcore, System, String)* CX_ID_4(Properties, ApplicationSettings, Name, __get)();
-extern CX_EXPORT cx_int CX_ID_4(Properties, Counter, Value, __get)(
-    struct CX_ID_2(Properties, Counter)* __this    
-);
-extern CX_EXPORT void CX_ID_4(Properties, Counter, Value, __set)(
-    struct CX_ID_2(Properties, Counter)* __this,
-    cx_int value    
-);
-extern CX_EXPORT cx_int CX_ID_4(Properties, Counter, Item, __const_get)(
-    const struct CX_ID_2(Properties, Counter)* __this,
-    cx_uint index
-    
-);
-extern CX_EXPORT void CX_ID_4(Properties, Counter, Item, __set)(
-    struct CX_ID_2(Properties, Counter)* __this,
-    cx_uint index
-,
-    cx_int value    
-);
+extern CX_EXPORT struct CX_ID_3(cxcore, System, String) *
+    CX_ID_4(Properties, ApplicationSettings, Name, __get)();
+extern CX_EXPORT cx_int CX_ID_4(Properties, Counter, Value,
+                                __get)(struct CX_ID_2(Properties, Counter) * __this);
+extern CX_EXPORT void CX_ID_4(Properties, Counter, Value,
+                              __set)(struct CX_ID_2(Properties, Counter) * __this, cx_int value);
+extern CX_EXPORT cx_int CX_ID_4(Properties, Counter, Item,
+                                __const_get)(const struct CX_ID_2(Properties, Counter) * __this,
+                                             cx_uint index
 
+);
+extern CX_EXPORT void CX_ID_4(Properties, Counter, Item,
+                              __set)(struct CX_ID_2(Properties, Counter) * __this, cx_uint index,
+                                     cx_int value);
 
 #endif // _PROPERTIES_H_
