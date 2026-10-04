@@ -1,3 +1,5 @@
+import System;
+
 // Generic functions can infer their type argument from the call.
 public T Identity<T>(T value) {
     return value;
@@ -67,4 +69,11 @@ public int UsePair() {
 
 public long ReadPairSecond(Pair<int, long> pair) {
     return pair.Echo<long>(pair.second);
+}
+
+public int Main() {
+    if (KeepInt(7) != 7) return 1;
+    if (UsePair() != 8) return 1;
+    Console.WriteLine("generics pass");
+    return 0;
 }

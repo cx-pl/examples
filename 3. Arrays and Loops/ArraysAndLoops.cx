@@ -1,3 +1,5 @@
+import System;
+
 public int SumSmallSquares() {
     int[] squares = new int[5];
 
@@ -10,8 +12,14 @@ public int SumSmallSquares() {
         if (square > 9) {
             break;
         }
-         otal += square;
+        total += square;
     }
 
     return total;
+}
+
+public int Main() {
+    if (SumSmallSquares() != 14) return 1;
+    Console.WriteLine("arrays pass");
+    return 0;
 }

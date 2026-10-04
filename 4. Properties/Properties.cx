@@ -1,13 +1,20 @@
-// `extern` accessors declare properties implemented by the hosting runtime.
-public class Counter {
-    public int Value { extern get; extern set; }
+import System;
 
-    public int Item {
-        extern const get(uint index);
-        extern set(uint index);
+public class Counter {
+    int storedValue;
+
+    public constructor() {}
+
+    public int Value {
+        get { return storedValue; }
+        set { storedValue = value; }
     }
 }
 
-public static class ApplicationSettings {
-    public static string Name { extern get; }
+public int Main() {
+    Counter counter = new Counter();
+    counter.Value = 37;
+    if (counter.Value != 37) return 1;
+    Console.WriteLine("properties pass");
+    return 0;
 }
