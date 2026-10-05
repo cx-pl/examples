@@ -34,6 +34,10 @@ public class GradeBook {
     }
 }
 
+public class GradeBookSession {
+    public static GradeBook Current;
+}
+
 public int Main() {
     int[] scores = new int[5];
     scores[0] = 72;
@@ -43,9 +47,13 @@ public int Main() {
     scores[4] = 100;
 
     GradeBook report = new GradeBook(scores, 5);
+    GradeBookSession.Current = report;
+    int[] allocationPressure = new int[300000];
+    GradeBook retained = GradeBookSession.Current;
     if (report.Average() != 82) return 1;
     if (report.PassedCount() != 4) return 2;
     if (report.Highest() != 100) return 3;
+    if (retained.Average() != 82) return 4;
 
     Console.WriteLine("Gradebook report complete");
     return 0;
