@@ -14,9 +14,19 @@ parameters or one `string[] args` parameter and return `void` or `int`.
   expressions.
 - `6. Generics` — inferred and explicit generic calls, generic arrays and
   nested types, and a two-parameter generic class with a generic method.
+- `7. Gradebook` — a small score report using classes, arrays, iteration, and
+  calculated statistics. It serves as a nontrivial release-readiness example.
 
-The regression script checks each sample's expected output and exit code. The
-Hello World sample exercises `Main(string[] args)`. With the compiler,
+The regression script checks the seven focused samples' expected output and exit
+code. The Hello World sample exercises `Main(string[] args)`. The Gradebook
+sample is the nontrivial release-readiness application. Build it from the
+workspace root with:
+
+```powershell
+dotnet run --project .\cxc\src\CxCompiler.csproj -- --compile --cxcore-dir .\cxcore ".\examples\7. Gradebook\Gradebook.cx"
+```
+
+With the compiler,
 CMake, and a local `cxcore` checkout available, run the set from the workspace
 root:
 

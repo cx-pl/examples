@@ -1,0 +1,52 @@
+import System;
+
+public class GradeBook {
+    private int[] scores;
+    private int count;
+
+    public constructor(int[] values, int size) {
+        scores = values;
+        count = size;
+    }
+
+    public int Average() const {
+        int total = 0;
+        foreach (int score in scores) {
+            total += score;
+        }
+        return total / count;
+    }
+
+    public int PassedCount() const {
+        int count = 0;
+        foreach (int score in scores) {
+            if (score >= 60) count++;
+        }
+        return count;
+    }
+
+    public int Highest() const {
+        int best = scores[0];
+        for (int index = 1; index < count; index++) {
+            if (scores[index] > best) best = scores[index];
+        }
+        return best;
+    }
+}
+
+public int Main() {
+    int[] scores = new int[5];
+    scores[0] = 72;
+    scores[1] = 96;
+    scores[2] = 58;
+    scores[3] = 84;
+    scores[4] = 100;
+
+    GradeBook report = new GradeBook(scores, 5);
+    if (report.Average() != 82) return 1;
+    if (report.PassedCount() != 4) return 2;
+    if (report.Highest() != 100) return 3;
+
+    Console.WriteLine("Gradebook report complete");
+    return 0;
+}
