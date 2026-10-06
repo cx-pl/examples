@@ -1,0 +1,112 @@
+import System;
+
+public struct Vector2d {
+    int X, Y;
+
+    constructor(int x, int y) {
+        X = x;
+        Y = y;
+    }
+
+	public Vector2d operator -() const {
+        return new Vector2d(-X, -Y);
+    }
+	
+    public Vector2d operator +(const Vector2d other) const {
+        return new Vector2d(X + other.X, Y + other.Y);
+    }
+	
+	public Vector2d operator -(const Vector2d other) const {
+        return new Vector2d(X - other.X, Y - other.Y);
+    }
+	
+	public Vector2d operator *(int scale) const {
+        return new Vector2d(X * scale, Y * scale);
+    }
+	
+	public void operator ++() {
+		X++;
+		Y++;
+    }
+	
+	public void operator --() {
+        X--;
+		Y--;
+    }
+	
+	public void operator +=(const Vector2d other) {
+		X += other.X;
+		Y += other.Y;
+    }
+	
+	public void operator -=(const Vector2d other) {
+		X -= other.X;
+		Y -= other.Y;
+    }
+	
+	public void operator *=(int scale) {
+		X *= scale;
+		Y *= scale;
+    }
+	
+	public bool operator ==(const Vector2d other) const {
+		return X == other.X && Y == other.Y;
+	}
+	
+	public bool operator !=(const Vector2d other) const {
+		return X != other.X || Y != other.Y;
+	}
+	
+	public bool operator >(const Vector2d other) const {
+		return X > other.X || Y > other.Y;
+	}
+	
+	public bool operator >=(const Vector2d other) const {
+		return X >= other.X || Y >= other.Y;
+	}
+	
+	public bool operator <(const Vector2d other) const {
+		return X < other.X || Y < other.Y;
+	}
+	
+	public bool operator <=(const Vector2d other) const {
+		return X <= other.X || Y <= other.Y;
+	}
+}
+
+public int Main() {
+	Vector2d a = new Vector2d(3, 4);
+	Vector2d b = new Vector2d(10, 100);
+	
+	Vector2d c = a + b;
+    if (c.X != 13) return 1;
+	if (c.Y != 104) return 1;
+
+	Vector2d negative = -a;
+	if (negative.X != -3 || negative.Y != -4) return 1;
+	
+	Vector2d d = c * 2;
+    if (d.X != 26) return 1;
+	if (d.Y != 208) return 1;
+
+	Vector2d old = a++;
+	if (old.X != 3 || old.Y != 4 || a.X != 4 || a.Y != 5) return 1;
+	Vector2d incremented = ++a;
+	if (incremented.X != 5 || incremented.Y != 6 || a.X != 5 || a.Y != 6) return 1;
+	a--;
+	if (a.X != 4 || a.Y != 5) return 1;
+	--a;
+	if (a.X != 3 || a.Y != 4) return 1;
+
+	a += b;
+	if (a.X != 13 || a.Y != 104) return 1;
+	a -= b;
+	if (a.X != 3 || a.Y != 4) return 1;
+	a *= 2;
+	if (a.X != 6 || a.Y != 8) return 1;
+
+	if (!(a != b) || !(a < b) || !(b > a) || !(a <= b) || !(b >= a)) return 1;
+	if (!(a == a)) return 1;
+	
+    return 0;
+}
