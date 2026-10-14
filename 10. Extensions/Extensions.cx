@@ -1,0 +1,26 @@
+import System;
+
+public class Foo {
+	public int Value { const get; set; }		
+}
+
+public extension FooExtensions : Foo {
+	public int DoubledValue { const get => Value * 2; }
+	
+	public void Invert() {
+		Value = -Value;
+	}
+}
+
+public int Main() {
+	var foo = new Foo();	
+	foo.Value = 5;
+	
+	var val1 = foo.Value; // 5
+	var val2 = foo.DoubledValue; // 10
+	foo.Invert();
+	var val3 = foo.Value; // -5
+	var val4 = foo.DoubledValue; // -10	
+
+	return 0;
+}

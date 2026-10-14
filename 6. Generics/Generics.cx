@@ -5,6 +5,11 @@ public T Identity<T>(T value) {
     return value;
 }
 
+// A closed specialization replaces the generic body only for int.
+public int Identity <int>(int value) {
+    return value + 1;
+}
+
 public T Select<T>(bool chooseFirst, T first, T second) {
     if (chooseFirst) return first; else return second;
 }
@@ -72,7 +77,8 @@ public long ReadPairSecond(Pair<int, long> pair) {
 }
 
 public int Main() {
-    if (KeepInt(7) != 7) return 1;
+    if (KeepInt(7) != 8) return 1;
+    if (Identity(6) != 7 || Identity<long>(9L) != 9L) return 1;
     if (UsePair() != 8) return 1;
     Console.WriteLine("generics pass");
     return 0;

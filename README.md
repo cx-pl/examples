@@ -12,8 +12,9 @@ parameters or one `string[] args` parameter and return `void` or `int`.
 - `4. Properties` — regular, static, and indexed property declarations.
 - `5. Expressions` — arithmetic, bitwise, conditional, and null-coalescing
   expressions.
-- `6. Generics` — inferred and explicit generic calls, generic arrays and
-  nested types, and a two-parameter generic class with a generic method.
+- `6. Generics` — inferred and explicit generic calls, a top-level closed
+  generic function specialization with primary-body fallback, generic arrays
+  and nested types, and a two-parameter generic class with a generic method.
 - `7. Gradebook` — a small score report using classes, arrays, iteration, and
   calculated statistics. It serves as a nontrivial release-readiness example.
 
